@@ -45,13 +45,9 @@ function App() {
       <ul>
         {tasks.map(task => (
           <li key={task._id}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTask(task)}
-            />
+            <input type="checkbox" checked={task.completed} onChange={() => toggleTask(task)}/>
             {task.text}
-            <button onClick={() => deleteTask(task._id)}>X</button>
+            <button onClick={() => deleteTask(task._id)}>❌</button>
           </li>
         ))}
       </ul>
