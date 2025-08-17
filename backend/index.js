@@ -28,12 +28,12 @@ app.post('/tasks', async (req, res) => {
     res.json(tasks);
 })
 
-app.put('/tasks', async (req, res) => {
+app.put('/tasks/:id', async (req, res) => {
     const tasks = await  Task.findByIdAndUpdate(req.params.id, req.body);
     res.json(tasks);
 })
 
-app.delete('/tasks', async (req, res) => {
+app.delete('/tasks/:id', async (req, res) => {
     const tasks = await  Task.findByIdAndDelete(req.params.id);
     res.sendStatus(204);
 })
